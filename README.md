@@ -21,7 +21,7 @@ Go Encourages developers to have good practices
 <hr />
 
 ### Exercises Notes
-#### Exercise 01
+#### Exercise 01 - Hello World
 Basic Hello World Structure
 
      package main
@@ -35,7 +35,7 @@ Basic Hello World Structure
 
 > Its important to have the bracket inline with the declaration of te function. Put it below is incorrect.
 
-#### Exercise 02
+#### Exercise 02 - Variables
 Variables could have }**Global Scope** *( Outsite Functions)* or **Local Scope** *(in functions)*
 
 ##### Ways to declare variables
@@ -62,3 +62,31 @@ For strings you need other functions to it works
 
 You can also import another package strconv
     strcon.Itoa(int(number)
+
+#### Exercise 3 - Control Structures
+##### if statement
+    if condition {
+		//instructions
+	}else if condition2{
+		//instructions
+	}else{
+        //instructions
+    }
+
+>In go is possible to reassign a value of a variable in the if instruction.
+**An illustrative example:**
+    estado:=true
+    if estado=false; estado=true {
+		//instructions
+	}else{
+		//instructions
+	}
+
+##### switch case 
+    switch expression {
+	case condition:
+		//instruction
+    default:
+        //instruction
+	} 
+
