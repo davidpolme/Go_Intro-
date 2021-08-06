@@ -9,7 +9,7 @@ func main(){
 	
 	estado = true
 	//!reasigna el valor de la variable dentro del if
-	if estado=false; estado == true {
+	if estado=false; estado {
 		fmt.Println(estado)
 	}else{
 		fmt.Println("El estado es falso")

@@ -90,3 +90,20 @@ You can also import another package strconv
         //instruction
 	} 
 
+####  Show and accept data
+
+    fmt.Println("Enter the number: ")
+	fmt.Scanf("%d", &variable)
+
+Scanf functions well in linux but it have some issues compiling in windows os. So you can use instead the function Scanln
+
+    fmt.Println("Enter the number: ")
+	fmt.Scanln(&variable)
+
+Also you can use the bufio and os packages to resolve this action
+
+    scanner := bufio.NewScanner(os.Stdin)
+	if scanner.Scan(){
+		leyenda = scanner.Text()
+	}
+    fmt.Println(leyenda, resultado)
