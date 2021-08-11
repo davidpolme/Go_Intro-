@@ -1,0 +1,2 @@
+Este es un archivo de texto usado como muestra para la clase de manejo de archivos en Go.
+Esta es la segunda linea de mi archivo de texto.
