@@ -11,7 +11,7 @@ type humano interface{
 
 type animal interface{
 	respirar()
-	cocmer()
+	comer()
 	EsCarnivoro() bool
 }
 
@@ -56,35 +56,29 @@ type mujer struct {
 
 
  /*---------------------------------------*/
-
  /*Genero Animal*/
- type perro struct{
+type perro struct {
 	respirando bool
 	comiendo bool
 	carnivoro bool
- }
+}
 
  func (p *perro) respirar() { p.respirando=true}
  func (p *perro) comer() { p.comiendo=true}
- func (p *perro) EsCarnivoro() bool {return p.carnivoro}
-
+ func (p *perro) EsCarnivoro()bool { return p.carnivoro}
 
  func AnimalesRespirar(an animal)  {
 	 an.respirar()
-	 
 	 fmt.Println("Soy un animal y estoy respirando")
-	 
  }
 
- func AnimalesCarnivoros(an animal) int {
-	 if an.EsCarnivoro() == true {
+ func AnimalesCarnivoros(an animal) int  {
+	 if an.EsCarnivoro()== true {
 		 return 1
-	 }else{
-		 return 0
-	}
-	 
+	 }
+	 return 0
  }
-
+ 
 func main()  {
 	// Pedro:=new(hombre)
 	// Pedro.esMasculino=true;
@@ -93,10 +87,12 @@ func main()  {
 	// Maria :=new(mujer)
 	// HumanosRespirando(Maria)
 
-	totalCarnivoros:=0
-	// Dogo := new(perro)
-	Dogo := new(perro)
-	Dogo.carnivoro= true;
-	AnimalesRespirar(Dogo)
+	totalCarnivoros := 0
 
+	Dogo := new(perro)
+	Dogo.carnivoro = true
+	AnimalesRespirar(Dogo)
+	totalCarnivoros= +AnimalesCarnivoros(Dogo)
+
+	fmt.Printf("Total Carnivoros %d", totalCarnivoros)
 }
