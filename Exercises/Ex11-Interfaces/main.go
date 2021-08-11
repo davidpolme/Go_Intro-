@@ -24,8 +24,8 @@ type animal interface{
 }
 
 type vegetal interface{
-	ClasificacionVegetal() string
-}
+	miColor() string
+} 
 
 
 
@@ -101,6 +101,22 @@ type mujer struct {
  func estoyVivo(v SerVivo) bool {
 	 return v.estaVivo()
  }
+
+
+ /*Vegetal*/
+type cactus struct {
+	vivo bool
+	color string
+}
+
+	func (c *cactus) miColor() string { return c.color}
+	func (c *cactus) estaVivo() bool { return c.vivo}
+
+	func VegetalColor(ve vegetal){
+		ve.miColor()
+		fmt.Printf("Soy vegetal y soy de color %s \n", ve.miColor())
+	}
+
 func main()  {
 	// Pedro:=new(hombre)
 	// Pedro.esMasculino=true;
@@ -109,14 +125,19 @@ func main()  {
 	// Maria :=new(mujer)
 	// HumanosRespirando(Maria)
 
-	totalCarnivoros := 0
+	// totalCarnivoros := 0
 
-	Dogo := new(perro)
-	Dogo.carnivoro = true
-	Dogo.vivo = true
-	AnimalesRespirar(Dogo)
-	totalCarnivoros += AnimalesCarnivoros(Dogo)
+	// Dogo := new(perro)
+	// Dogo.carnivoro = true
+	// Dogo.vivo = true
+	// AnimalesRespirar(Dogo)
+	// totalCarnivoros += AnimalesCarnivoros(Dogo)
 
-	fmt.Printf("Total Carnivoros %d \n", totalCarnivoros)
-	fmt.Printf("Estoy vivo %t", estoyVivo(Dogo))
+	// fmt.Printf("Total Carnivoros %d \n", totalCarnivoros)
+	// fmt.Printf("Estoy vivo %t", estoyVivo(Dogo))
+
+	Puntudo := new(cactus)
+	Puntudo.color = "Violeta"
+	VegetalColor(Puntudo)
+
 }
