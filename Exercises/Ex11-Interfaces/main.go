@@ -2,17 +2,25 @@ package main
 
 import "fmt"
 
+type SerVivo interface{
+	estaVivo() bool
+}
+
 type humano interface{
 	respirar()
 	pensar()
 	comer()
 	genero() string
+	estaVivo()
 }
 
 type animal interface{
 	respirar()
 	comer()
 	EsCarnivoro() bool
+	estaVivo() bool
+
+	
 }
 
 type vegetal interface{
@@ -30,6 +38,7 @@ type hombre struct {
 	pensando bool
 	comiendo bool
 	esMasculino bool
+	vivo bool
 }
 
 type mujer struct {
@@ -46,32 +55,37 @@ type mujer struct {
 	 return "Mujer"
  }}
 
-
+ func (h *hombre) estaVivo() bool { return h.vivo}
+ 
+ 
  func HumanosRespirando(hu humano)  {
 	 hu.respirar()
-
+	 
 	 fmt.Printf("Soy un/a %s, y ya estoy respirando \n",hu.genero())
 	 
- }
-
-
- /*---------------------------------------*/
- /*Genero Animal*/
-type perro struct {
-	respirando bool
-	comiendo bool
-	carnivoro bool
-}
-
- func (p *perro) respirar() { p.respirando=true}
- func (p *perro) comer() { p.comiendo=true}
- func (p *perro) EsCarnivoro()bool { return p.carnivoro}
-
- func AnimalesRespirar(an animal)  {
-	 an.respirar()
-	 fmt.Println("Soy un animal y estoy respirando")
- }
-
+	}
+	
+	
+	/*---------------------------------------*/
+	/*Genero Animal*/
+	type perro struct {
+		respirando bool
+		comiendo bool
+		carnivoro bool
+		vivo bool
+	}
+	
+	func (p *perro) respirar() { p.respirando=true}
+	func (p *perro) comer() { p.comiendo=true}
+	func (p *perro) EsCarnivoro()bool { return p.carnivoro}
+	
+	func (p *perro) estaVivo() bool { return p.vivo}
+	
+	func AnimalesRespirar(an animal)  {
+		an.respirar()
+		fmt.Println("Soy un animal y estoy respirando")
+	}
+	
  func AnimalesCarnivoros(an animal) int  {
 	 if an.EsCarnivoro()== true {
 		 return 1
@@ -79,6 +93,14 @@ type perro struct {
 	 return 0
  }
  
+
+
+
+ /*Ser Vivo*/
+
+ func estoyVivo(v SerVivo) bool {
+	 return v.estaVivo()
+ }
 func main()  {
 	// Pedro:=new(hombre)
 	// Pedro.esMasculino=true;
@@ -91,8 +113,10 @@ func main()  {
 
 	Dogo := new(perro)
 	Dogo.carnivoro = true
+	Dogo.vivo = true
 	AnimalesRespirar(Dogo)
-	totalCarnivoros= +AnimalesCarnivoros(Dogo)
+	totalCarnivoros += AnimalesCarnivoros(Dogo)
 
-	fmt.Printf("Total Carnivoros %d", totalCarnivoros)
+	fmt.Printf("Total Carnivoros %d \n", totalCarnivoros)
+	fmt.Printf("Estoy vivo %t", estoyVivo(Dogo))
 }
