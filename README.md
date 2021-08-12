@@ -114,3 +114,7 @@ Una estructura, permite generar una definicion de propiedades que van a tener lo
 
 #### Interfaces
 Las interfaces permiten definir conductas, operaciones, comportamiento ...
+
+#### DEFER PANIC RECOVER
+##### DEFER
+Es una instruccion que se ejecuta si o si cuando se detecta que una funcion se va por un return o por un error o por un fin de funcion
