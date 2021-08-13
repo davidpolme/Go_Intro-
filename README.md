@@ -117,8 +117,11 @@ Las interfaces permiten definir conductas, operaciones, comportamiento ...
 
 #### DEFER PANIC RECOVER
 ##### DEFER
-Es una instruccion que se ejecuta si o si cuando se detecta que una funcion se va por un return o por un error o por un fin de funcion
+>Es una instruccion que se ejecuta si o si cuando se detecta que una funcion se va por un return o por un error o por un fin de funcion
 
 #### Routines
 ##### Canal
-Un canal es un espacio de memoria de dialogo en el que van a dialogar distintas rutinas y cuando se aloje un espacio de memoria la rutina que esta pidiendo un valor a cambio va a actuar en consecuencia.  
+>Un canal es un espacio de memoria de dialogo en el que van a dialogar distintas rutinas y cuando se aloje un espacio de memoria la rutina que esta pidiendo un valor a cambio va a actuar en consecuencia.  
+
+#### Middlewares
+> Son interceptores que permiten ejecutar instrucciones comunes a varias funciones que reciben y devuelven los mismos tipos de variables
