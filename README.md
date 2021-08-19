@@ -117,7 +117,7 @@ Interfaces define conducts, operations, behavior
 
 #### DEFER PANIC RECOVER
 ##### DEFER
->Es una instruccion que se ejecuta si o si cuando se detecta que una funcion se va por un return o por un error o por un fin de funcion
+>Is an instruction which executes allways when it detects when a function end it process because a return, error or the normal end of that function
 
 #### Routines
 ##### Canal
