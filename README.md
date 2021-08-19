@@ -121,7 +121,7 @@ Interfaces define conducts, operations, behavior
 
 #### Routines
 ##### Canal
->Un canal es un espacio de memoria de dialogo en el que van a dialogar distintas rutinas y cuando se aloje un espacio de memoria la rutina que esta pidiendo un valor a cambio va a actuar en consecuencia.  
+>A channel is a medium through which a goroutine communicates with another goroutine and this communication is lock-free. Or in other words, a channel is a technique which allows to let one goroutine to send data to another goroutine 
 
 #### Middlewares
-> Son interceptores que permiten ejecutar instrucciones comunes a varias funciones que reciben y devuelven los mismos tipos de variables
+> There are interceptors that allows the execution of common instructions to different functions which get and return the same kind of variables
