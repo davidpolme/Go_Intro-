@@ -113,7 +113,7 @@ Also you can use the bufio and os packages to resolve this action
 Una estructura, permite generar una definicion de propiedades que van a tener los objetos
 
 #### Interfaces
-Las interfaces permiten definir conductas, operaciones, comportamiento ...
+Interfaces define conducts, operations, behavior
 
 #### DEFER PANIC RECOVER
 ##### DEFER
